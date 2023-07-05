@@ -22,6 +22,11 @@ import java.util.List;
 public class ChartQueryRequest extends PageRequest implements Serializable {
 
     /**
+     * 名称
+     */
+    private String name;
+
+    /**
      * id
      */
     private Long id;
