@@ -13,4 +13,6 @@ public interface FileConstant {
      * todo 需替换配置
      */
     String COS_HOST = "https://yupi.icu";
+
+    Long ONE_MB = 1024 * 1024L;
 }

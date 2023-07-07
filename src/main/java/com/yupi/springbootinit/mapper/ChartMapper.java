@@ -3,6 +3,9 @@ package com.yupi.springbootinit.mapper;
 import com.yupi.springbootinit.model.entity.Chart;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
+import java.util.List;
+import java.util.Map;
+
 /**
 * @author 73632
 * @description 针对表【chart(图标信息表)】的数据库操作Mapper
@@ -10,7 +13,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 * @Entity com.yupi.springbootinit.model.entity.Chart
 */
 public interface ChartMapper extends BaseMapper<Chart> {
-
+    List<Map<String, Object>> queryChartData(String querySql);
 }
 
 
