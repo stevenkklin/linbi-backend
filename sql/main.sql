@@ -34,6 +34,8 @@ CREATE TABLE `chart` (
                          `isDelete` tinyint(4) NOT NULL DEFAULT '0' COMMENT '是否删除',
                          `userId` bigint(20) DEFAULT NULL COMMENT '创建用户id',
                          `name` varchar(128) null comment '图表名称',
+                         `status` varchar(128) not null default 'wait' comment 'wait, running, succeed, failed',
+                        `execMessage` text null comment '执行信息',
                          PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1675732938877083650 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='图标信息表'
 
