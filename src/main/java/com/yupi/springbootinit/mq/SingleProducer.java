@@ -6,16 +6,23 @@ import com.rabbitmq.client.ConnectionFactory;
 
 import java.nio.charset.StandardCharsets;
 
-public class Send {
+public class SingleProducer {
 
     private final static String QUEUE_NAME = "hello";
 
     public static void main(String[] argv) throws Exception {
+        // 创建连接工厂
         ConnectionFactory factory = new ConnectionFactory();
-        factory.setHost("localhost");
+        factory.setHost("175.178.38.11");
+        factory.setUsername("admin");
+        factory.setPassword("123456");
+        // 建立连接、创建频道
         try (Connection connection = factory.newConnection();
+             // 创建一个频道（相对于客户端）
              Channel channel = connection.createChannel()) {
+            // 创建消息队列
             channel.queueDeclare(QUEUE_NAME, false, false, false, null);
+            // 发送消息
             String message = "Hello World!";
             channel.basicPublish("", QUEUE_NAME, null, message.getBytes(StandardCharsets.UTF_8));
             System.out.println(" [x] Sent '" + message + "'");
