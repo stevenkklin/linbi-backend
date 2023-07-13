@@ -2,30 +2,30 @@
 # @author <a href="https://github.com/liyupi">程序员鱼皮</a>
 # @from <a href="https://yupi.icu">编程导航知识星球</a>
 server:
-  port: 8101
+  port: 8080
 spring:
   # 数据库配置
   # todo 需替换配置
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/my_db
-    username: root
-    password: 123456
+    url: 'jdbc:mysql://rm-cn-zxu3a5nab0006vho.rwlb.rds.aliyuncs.com:3306/linbi'
+    username: linchao
+    password: Ll0606066
   # Redis 配置
   # todo 需替换配置
   redis:
     database: 1
-    host: localhost
+    host: 'r-bp1q4d3nrmuro9twgwpd.redis.rds.aliyuncs.com'
     port: 6379
     timeout: 5000
-    password: 123456
+    password: Ll0606066
   # Elasticsearch 配置
   # todo 需替换配置
-  elasticsearch:
-    uris: http://localhost:9200
-    username: root
-    password: 123456
-mybatis-plus:
-  configuration:
-    # 生产环境关闭日志
-    log-impl: ''
+#  elasticsearch:
+#    uris: http://localhost:9200
+#    username: root
+#    password: 123456
+#mybatis-plus:
+#  configuration:
+#    # 生产环境关闭日志
+#    log-impl: ''
