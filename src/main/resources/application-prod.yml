@@ -15,7 +15,7 @@ spring:
   # todo 需替换配置
   redis:
     database: 1
-    host: 'r-bp1q4d3nrmuro9twgwpd.redis.rds.aliyuncs.com'
+    host: r-bp1q4d3nrmuro9twgwpd.redis.rds.aliyuncs.com
     port: 6379
     timeout: 5000
     password: Ll0606066

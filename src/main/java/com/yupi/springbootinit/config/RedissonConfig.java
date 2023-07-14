@@ -6,6 +6,7 @@ import org.omg.CORBA.PRIVATE_MEMBER;
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
 import org.redisson.config.Config;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,12 +21,11 @@ import org.springframework.context.annotation.Configuration;
 public class RedissonConfig {
 
     private Integer database;
-
     private String host;
-
     private Integer port;
-
     private  String password;
+
+
 
     @Bean
     public RedissonClient redissonClient() {
@@ -33,7 +33,7 @@ public class RedissonConfig {
         config.useSingleServer()
                 .setDatabase(database)
                 .setAddress("redis://"+ host +":" + port)
-                .setPassword("abc123456");
+                .setPassword(password);
         RedissonClient redisson = Redisson.create(config);
         return redisson;
     }
