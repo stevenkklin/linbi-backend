@@ -12,7 +12,7 @@ import com.rabbitmq.client.ConnectionFactory;
 public class BiInitMain {
 
     public static void main(String[] args) {
-
+        System.out.println("testBiinitMain");
         try {
             ConnectionFactory factory = new ConnectionFactory();
             factory.setHost("175.178.38.11");
